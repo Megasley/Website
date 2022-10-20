@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Countries</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    {% include 'header.html' %}}
+</head>
+<body>
+    <main role="main" class="flex-shrink-0">
+    <div class="container pt-5 mt-5">
+        <div class="col text-center mb-4">
+            <h1>Supported Countries</h1>
+        </div>
+        <div class="col">
+            <div class="row">
+                {% for country in countries_response: %}
+                    <div class="col-4">
+                        <div class="row">
+                            <div class="col-2"><img src="{{ country['flag'] }}" width="100%"></div>
+                            <div class="col-2">{{country['isoName']}}</div>
+                            <a href="" class="col-auto">{{country['currencyName']}}</a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</main>>
+
+</body>
+</html>
